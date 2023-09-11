@@ -1,5 +1,7 @@
 /** @format */
 
+@import "animate.css";
+
 ::selection {
   color: black;
   background-color: white;
@@ -49,6 +51,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding: var(--scroll-padding, 100px);
+  /* scroll-padding-top: 85px; */
 }
 
 body {
@@ -276,32 +279,72 @@ a {
     font-size: var(--normal-size);
   }
 
-  nav > ul > li > a {
-    text-decoration: none;
-    color: var(--gray);
-  }
-
   nav {
     display: block;
+    height: 85px;
   }
 
-  nav > ul > li {
+  nav > ul > li > a {
     position: relative;
+    text-decoration: none;
+    color: var(--gray);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
-  nav > ul > li:hover::after {
+  nav > ul > li > a > div {
+    width: 0px;
+    position: absolute;
+    transition: width 0.3s ease;
+    color: var(--white);
+    background-color: var(--white);
+  }
+
+  nav > ul > li:hover > a > div {
+    display: block;
+    width: 40px;
+    height: 1.5px;
+    color: white;
+    background-color: white;
+    top: 100%;
+    margin-top: 7px;
+  }
+
+  /* nav > ul > li:hover::after {
     content: "";
     position: absolute;
-
     top: 100%;
     margin-top: 7px;
     width: 40px;
     color: var(--white);
     height: 2px;
     background-color: var(--white);
-  }
+    transform: translateX(-20px), translateX(20px);
+    transform-origin: center;
+  } */
+
+  /* .nav-list-item {
+    position: absolute;
+    top: 100%;
+    margin-top: 7px;
+    width: 40px;
+    color: var(--white);
+    height: 2px;
+    background-color: var(--white);
+    transform: translateX(-20px), translateX(20px);
+    transform-origin: center;
+  } */
+
+  /* @keyframes navHoverEffect {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(20px);
+      transform: translateX(-20px);
+    }
+  } */
 
   header {
     position: sticky;
