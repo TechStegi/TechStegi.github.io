@@ -51,7 +51,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding: var(--scroll-padding, 100px);
-  /* scroll-padding-top: 85px; */
+  /* scroll-padding-top: 100px; */
 }
 
 body {
@@ -72,6 +72,30 @@ h1 {
   text-align: center;
   color: var(--white);
   font-size: var(--header-size);
+  transition: color 3s ease, transform 3s ease;
+  animation-play-state: paused;
+}
+
+:target h1 {
+  animation-play-state: running;
+  color: lightskyblue;
+  animation-name: h1Color;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+
+@keyframes h1Color {
+  0% {
+    color: var(--white);
+  }
+  50% {
+    color: lightskyblue;
+  }
+  100% {
+    color: aqua;
+  }
 }
 
 h2 {
@@ -117,11 +141,9 @@ p {
 
 .projects__single-project-wrapper {
   margin: 30px auto 30px auto;
-  max-width: 920px;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
   gap: 40px;
 }
@@ -156,13 +178,13 @@ nav {
   line-height: 1.5rem;
 }
 
-.projects_container > div > p::first-letter {
+.projects__single-project__description::first-letter {
   color: orange;
   font-size: var(--header-size);
 }
 
-.projects_container > div > p::first-line {
-  color: white;
+.projects__single-project__description::first-line {
+  color: lightblue;
 }
 
 .skills {
@@ -381,9 +403,9 @@ a {
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (width >= 980px) or (orientation: landscape) {
+@media only screen and (width >= 980px) {
   .projects__single-project-wrapper {
-    width: 920px;
+    max-width: 920px;
     justify-content: flex-start;
   }
 
