@@ -384,7 +384,21 @@ a {
     background-color: #0f0f10;
     width: 100%;
     z-index: 99;
+    /* display: flex;
+    justify-content: space-around;
+    align-items: center; */
   }
+
+  .working-bag-icon {
+    width: 16px;
+    height: 16px;
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+
   .welcome__social-icon,
   .contact__social-icon {
     font-size: 20px;
