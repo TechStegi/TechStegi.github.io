@@ -5,8 +5,8 @@ const headerEl = document.querySelector("header");
 const headerHeight = headerEl.offsetHeight;
 
 document.documentElement.style.setProperty(
-  "--scroll-padding",
-  headerHeight + 15 + "px"
+  "--scroll-margin",
+  headerHeight + "px"
 );
 
 console.log(headerHeight);
