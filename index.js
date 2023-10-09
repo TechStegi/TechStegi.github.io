@@ -9,7 +9,129 @@ document.documentElement.style.setProperty(
   headerHeight + "px"
 );
 
-console.log(headerHeight);
+const projectsContainer = document.querySelectorAll(
+  ".projects__single-project"
+);
+const htmlSortButton = document.querySelector('[href="#html"]');
+const cssSortButton = document.querySelector('[href="#css"]');
+const jsSortButton = document.querySelector('[href="#javascript"]');
+let count = 0;
+htmlSortButton.addEventListener("click", sortHTML);
+cssSortButton.addEventListener("click", sortCSS);
+jsSortButton.addEventListener("click", sortJS);
+
+function sortHTML() {
+  for (let i = 0; i < projectsContainer.length; i++) {
+    for (
+      let j = 0;
+      j <
+      projectsContainer[i].querySelectorAll(
+        ".projects__single-project__tags__list__item"
+      ).length;
+      j++
+    ) {
+      switch (
+        projectsContainer[i]
+          .querySelectorAll(".projects__single-project__tags__list__item")
+          [j].textContent.toLowerCase()
+      ) {
+        case "html":
+          projectsContainer[i].style.setProperty("order", count--);
+          console.log("html ok");
+
+          break;
+      }
+    }
+  }
+}
+
+function sortCSS() {
+  for (let i = 0; i < projectsContainer.length; i++) {
+    for (
+      let j = 0;
+      j <
+      projectsContainer[i].querySelectorAll(
+        ".projects__single-project__tags__list__item"
+      ).length;
+      j++
+    ) {
+      switch (
+        projectsContainer[i]
+          .querySelectorAll(".projects__single-project__tags__list__item")
+          [j].textContent.toLowerCase()
+      ) {
+        case "css":
+          projectsContainer[i].style.setProperty("order", count--);
+          console.log("css ok");
+
+          break;
+      }
+    }
+  }
+}
+function sortJS() {
+  for (let i = 0; i < projectsContainer.length; i++) {
+    for (
+      let j = 0;
+      j <
+      projectsContainer[i].querySelectorAll(
+        ".projects__single-project__tags__list__item"
+      ).length;
+      j++
+    ) {
+      switch (
+        projectsContainer[i]
+          .querySelectorAll(".projects__single-project__tags__list__item")
+          [j].textContent.trim()
+          .toLowerCase()
+      ) {
+        case "javascript":
+          projectsContainer[i].style.setProperty("order", count--);
+          console.log("js ok");
+          break;
+      }
+    }
+  }
+}
+
+// if (
+//   projectsContainer[i]
+//     .querySelectorAll(".projects__single-project__tags__list__item")
+//     [j].textContent.toLowerCase() == "html"
+// ) {
+//   projectsContainer[i].style.setProperty("order", count--);
+//   console.log(
+//     "%cChanged: " + projectsContainer[i].style.order,
+//     "color: green"
+//   );
+//   console.log(
+//     projectsContainer[i].querySelectorAll(
+//       ".projects__single-project__tags__list__item"
+//     )[j].textContent
+//   );
+// } else if (
+//   projectsContainer[i]
+//     .querySelectorAll(".projects__single-project__tags__list__item")
+//     [j].textContent.toLowerCase() == "css"
+// ) {
+//   projectsContainer[i].style.setProperty("order", count--);
+// } else if (
+//   projectsContainer[i]
+//     .querySelectorAll(".projects__single-project__tags__list__item")
+//     [j].textContent.toLowerCase() == "javascript"
+// ) {
+//   projectsContainer[i].style.setProperty("order", count--);
+// } else {
+//   console.log(
+//     projectsContainer[i].querySelectorAll(
+//       ".projects__single-project__tags__list__item"
+//     )[j].textContent
+//   );
+//   console.log(
+//     "%cNot changed: " + projectsContainer[i].style.order,
+//     "color: red"
+//   );
+// }
 
 // /* Disable default link behavior of tag links */
 // document.addEventListener("DOMContentLoaded", function () {
