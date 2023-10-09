@@ -196,6 +196,13 @@ nav {
   gap: 15px;
 }
 
+#html:target,
+#css:target,
+#javascript:target {
+  order: -1;
+  scroll-behavior: none;
+}
+
 .html:target {
   color: green;
   background-color: yellow;
