@@ -80,3 +80,28 @@ console.log(headerHeight);
 //   console.log([i] + " tags: " + tags);
 //   console.log([i] + " tags.length: " + tags.length);
 // }
+
+// for (let i = 0; i < singleProjects.length; i++) {
+//   for (let j = 0; j < tags.length; j++) {
+//     let containHtml = tags[j].classList.contains("html");
+//     let containHtmlLength = containHtml.length;
+//     if (containHtml) {
+//       singleProjects[i].style.setProperty("order", `${count}`);
+//       count++;
+//     /*
+//  console.log([i] + " containHtml: " + containHtml);
+//       console.log([i] + " containHtmlLength: " + containHtmlLength);
+//  */
+//     } else {
+//       singleProjects[i].style.setProperty("order", `${lastCount}`);
+//       lastCount++;
+//     }
+//   }
+// /*
+//  console.log([i] + " singleProjects: " + singleProjects);
+//   console.log([i] + " singleProjects.length: " + singleProjects.length);
+
+//   console.log([i] + " tags: " + tags);
+//   console.log([i] + " tags.length: " + tags.length);
+// */
+// }
