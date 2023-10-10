@@ -13,9 +13,41 @@
       referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
+    <div class="build-overlay-container">
+      <div class="build-overlay">
+        <div
+          class="projects__single-project"
+          data-tooltip="Click to view this project ✨"
+          id="html css javascript">
+          <div class="projects__single-project__image-upload__input">
+            <i class="fa-regular fa-image projects__single-project__image-icon">
+            </i>
+            <p class="projects__single-project__image-upload__text">
+              Upload your image here
+            </p>
+          </div>
+          <div class="projects__single-project__tags">
+            <ul class="projects__single-project__tags__list">
+              <li class="projects__single-project__tags__list__item">tag1</li>
+              <li class="projects__single-project__tags__list__item">tag2</li>
+              <li class="projects__single-project__tags__list__item">tag3</li>
+            </ul>
+          </div>
+          <p class="projects__single-project__description">
+            A Provide a brief and informative description of your project here.
+          </p>
+        </div>
+      </div>
+    </div>
     <header>
       <svg>
         <use href="#working-bag-icon"></use>
@@ -72,15 +104,18 @@
         <h1 class="projects__heading">Projects</h1>
         <ul class="projects__filter-buttons__list">
           <li class="projects__filter-button">
-            <a href="#html" class="projects__filter-button-link">html</a>
+            <button class="projects__filter-button-link-html">html</button>
           </li>
           <li class="projects__filter-button">
-            <a href="#css" class="projects__filter-button-link">css</a>
+            <button class="projects__filter-button-link-css">css</button>
           </li>
           <li class="projects__filter-button">
-            <a href="#javascript" class="projects__filter-button-link"
-              >javascript</a
-            >
+            <button class="projects__filter-button-link-js">javascript</button>
+          </li>
+          <li>
+            <button class="projects__add-new-project__button">
+              Add new project
+            </button>
           </li>
         </ul>
         <div class="projects__single-project-wrapper">

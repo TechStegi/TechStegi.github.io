@@ -165,9 +165,23 @@ p {
   font-size: 20px;
 }
 
-.projects__filter-button-link {
+.projects__filter-button-link-html,
+.projects__filter-button-link-css,
+.projects__filter-button-link-js {
   text-decoration: none;
   color: white;
+  padding: 10px;
+  background-color: #1f2024;
+  border-radius: 10px;
+  font-size: var(--normal-size);
+  text-transform: capitalize;
+}
+
+.projects__add-new-project__button {
+  padding: 10px;
+  font-size: var(--normal-size);
+  border-radius: 10px;
+  background-color: skyblue;
 }
 
 .projects__single-project-wrapper {
@@ -194,13 +208,6 @@ nav {
   display: flex;
   flex-flow: column nowrap;
   gap: 15px;
-}
-
-#html:target,
-#css:target,
-#javascript:target {
-  order: -1;
-  scroll-behavior: none;
 }
 
 .html:target {
@@ -251,6 +258,48 @@ nav {
   max-width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 15px;
+}
+
+.build-overlay-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.67);
+  z-index: 99;
+  display: grid;
+  place-items: center;
+}
+
+.build-overlay {
+  position: relative;
+  margin: 0 auto;
+  width: 800px;
+  height: 600px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.projects__single-project__image-upload__input {
+  background-color: rgb(191, 191, 191);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projects__single-project__image-icon {
+  font-size: 100px;
+  color: grey;
+}
+.projects__single-project__image-upload__text {
+  color: gray;
+  font-size: var(--normal-size);
 }
 
 .projects__single-project__description {
@@ -422,7 +471,7 @@ a {
     top: 0;
     background-color: #0f0f10;
     width: 100%;
-    z-index: 99;
+    z-index: 90;
     /* display: flex;
     justify-content: space-around;
     align-items: center; */

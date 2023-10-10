@@ -12,9 +12,13 @@ document.documentElement.style.setProperty(
 const projectsContainer = document.querySelectorAll(
   ".projects__single-project"
 );
-const htmlSortButton = document.querySelector('[href="#html"]');
-const cssSortButton = document.querySelector('[href="#css"]');
-const jsSortButton = document.querySelector('[href="#javascript"]');
+const htmlSortButton = document.querySelector(
+  ".projects__filter-button-link-html"
+);
+const cssSortButton = document.querySelector(
+  ".projects__filter-button-link-css"
+);
+const jsSortButton = document.querySelector(".projects__filter-button-link-js");
 let count = 0;
 htmlSortButton.addEventListener("click", sortHTML);
 cssSortButton.addEventListener("click", sortCSS);
@@ -94,136 +98,12 @@ function sortJS() {
   }
 }
 
-// if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "html"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-//   console.log(
-//     "%cChanged: " + projectsContainer[i].style.order,
-//     "color: green"
-//   );
-//   console.log(
-//     projectsContainer[i].querySelectorAll(
-//       ".projects__single-project__tags__list__item"
-//     )[j].textContent
-//   );
-// } else if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "css"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-// } else if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "javascript"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-// } else {
-//   console.log(
-//     projectsContainer[i].querySelectorAll(
-//       ".projects__single-project__tags__list__item"
-//     )[j].textContent
-//   );
-//   console.log(
-//     "%cNot changed: " + projectsContainer[i].style.order,
-//     "color: red"
-//   );
-// }
+const newProjectBtn = document.querySelector(
+  ".projects__add-new-project__button"
+);
 
-// /* Disable default link behavior of tag links */
-// document.addEventListener("DOMContentLoaded", function () {
-//   const tagLinks = document.querySelectorAll(".projects__filter-button-link");
+newProjectBtn.addEventListener("click", buildOverlay);
 
-//   for (let i = 0; i < tagLinks.length; i++) {
-//     if (tagLinks[i]) {
-//       tagLinks[i].addEventListener("click", function (event) {
-//         event.preventDefault();
-//       });
-//     }
-//   }
-// });
-
-/* Trying to sort with Javascript */
-
-// const singleProjects = document.querySelectorAll(".projects__single-project");
-// const tagDiv = document.querySelectorAll(".projects__single-project__tags");
-// const tagList = document.querySelectorAll(
-//   ".projects__single-project__tags__list"
-// );
-// let count = -1;
-
-// for (let i = 0; i < singleProjects.length; i++) {
-//   console.log("%c Round Number: " + i, "color: white; background: purple;");
-//   // console.log('%c SingleProject in Main Loop: ' + i, 'color: red;');
-//   const tags = tagList[i].querySelectorAll(
-//     ".projects__single-project__tags__list__item"
-//   );
-//   for (let j = 0; j < tags.length; j++) {
-//     console.log("Tags length: " + tags[j].textContent);
-//     if (tags[j].textContent === "html") {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count--;
-//       console.log("Count: " + count);
-//       // console.log('%c SingleProject in Nested Loop: ' + i, 'color: yellow');
-//       // console.log('%c Tags: ' + singleProjects[i].querySelectorAll(
-//       //   ".projects__single-project__tags__list__item"
-//       // ).length, 'color: green')
-//     }
-//   }
-// }
-
-// let count = 0;
-// let lastCount = 50;
-
-// for (let i = 0; i < singleProjects.length; i++) {
-//   const tagsList = document.querySelector(
-//     ".projects__single-project__tags__list"
-//   );
-//   for (let j = 0; j < singleProjects[i].tagsList.tags.length; j++) {
-//     console.log("%c" + singleProjects[i].tagsList.tags.length, "color: green;");
-//     let containHtml =
-//       singleProjects[i].tagsList.tags[j].classList.contains("html");
-//     let containHtmlLength = containHtml.length;
-//     if (containHtml) {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count++;
-//       console.log([i] + " containHtml: " + containHtml);
-//       console.log([i] + " containHtmlLength: " + containHtmlLength);
-//     } else {
-//       singleProjects[i].style.setProperty("order", `${lastCount}`);
-//       lastCount++;
-//     }
-//   }
-//   console.log([i] + " singleProjects: " + singleProjects);
-//   console.log([i] + " singleProjects.length: " + singleProjects.length);
-//   console.log([i] + " tags: " + tags);
-//   console.log([i] + " tags.length: " + tags.length);
-// }
-
-// for (let i = 0; i < singleProjects.length; i++) {
-//   for (let j = 0; j < tags.length; j++) {
-//     let containHtml = tags[j].classList.contains("html");
-//     let containHtmlLength = containHtml.length;
-//     if (containHtml) {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count++;
-//     /*
-//  console.log([i] + " containHtml: " + containHtml);
-//       console.log([i] + " containHtmlLength: " + containHtmlLength);
-//  */
-//     } else {
-//       singleProjects[i].style.setProperty("order", `${lastCount}`);
-//       lastCount++;
-//     }
-//   }
-// /*
-//  console.log([i] + " singleProjects: " + singleProjects);
-//   console.log([i] + " singleProjects.length: " + singleProjects.length);
-
-//   console.log([i] + " tags: " + tags);
-//   console.log([i] + " tags.length: " + tags.length);
-// */
-// }
+function buildOverlay() {
+  
+}
