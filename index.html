@@ -22,29 +22,96 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
-    <div class="build-overlay-container">
+    <div
+      class="build-overlay-container hidden"
+      data-id="build-overlay-container">
       <div class="build-overlay">
         <div
           class="projects__single-project"
           data-tooltip="Click to view this project ✨"
-          id="html css javascript">
-          <div class="projects__single-project__image-upload__input">
+          id="html css javascript"
+          data-id="custom-project-card">
+          <div
+            class="projects__single-project__image-upload__input"
+            data-id="image-upload-input-container">
             <i class="fa-regular fa-image projects__single-project__image-icon">
             </i>
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              onchange="insertImage(this)"
+              class="image-upload-input"
+              data-id="image-upload-input" />
             <p class="projects__single-project__image-upload__text">
               Upload your image here
             </p>
           </div>
           <div class="projects__single-project__tags">
             <ul class="projects__single-project__tags__list">
-              <li class="projects__single-project__tags__list__item">tag1</li>
-              <li class="projects__single-project__tags__list__item">tag2</li>
-              <li class="projects__single-project__tags__list__item">tag3</li>
+              <li
+                class="projects__single-project__tags__list__item custom-tags-list-item">
+                tag1
+              </li>
+              <li
+                class="projects__single-project__tags__list__item custom-tags-list-item">
+                tag2
+              </li>
+              <li
+                class="projects__single-project__tags__list__item custom-tags-list-item">
+                tag3
+              </li>
             </ul>
           </div>
-          <p class="projects__single-project__description">
+          <p
+            class="projects__single-project__description"
+            data-id="card-description">
             A Provide a brief and informative description of your project here.
           </p>
+        </div>
+        <div class="input-container">
+          <h1 class="input-container-heading">Design your project card</h1>
+          <div class="input-fields-container">
+            <div class="label-input-box">
+              <label for="tag-input-1">1. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-1"
+                name="tag-input-1"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="tag-input-2">2. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-2"
+                name="tag-input-2"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="tag-input-3">3. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-3"
+                name="tag-input-3"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="desc-input">Description</label>
+              <textarea
+                class="project-input description-input"
+                id="desc-input"
+                name="desc-input">
+              </textarea>
+            </div>
+            <button
+              class="projects__add-new-project__button"
+              data-id="add-project-btn">
+              Add this project
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -113,7 +180,9 @@
             <button class="projects__filter-button-link-js">javascript</button>
           </li>
           <li>
-            <button class="projects__add-new-project__button">
+            <button
+              class="projects__add-new-project__button"
+              data-id="open-overlay">
               Add new project
             </button>
           </li>
