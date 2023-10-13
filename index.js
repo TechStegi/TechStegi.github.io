@@ -1,5 +1,3 @@
-/** @format */
-
 const headerEl = document.querySelector("header");
 
 const headerHeight = headerEl.offsetHeight;
