@@ -36,6 +36,11 @@ body {
   text-align: center;
 }
 
+[data-id="add-project-btn"] {
+  margin-top: 20px;
+  /* cursor: pointer; */
+}
+
 @mixin social-icon-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -52,6 +57,16 @@ body {
   color: var(--white);
   border-radius: 50%;
   border: 1px solid var(--gray);
+}
+
+@mixin list-item-button {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  background-color: #1f2024;
+  border-radius: 10px;
+  font-size: var(--normal-size);
+  text-transform: capitalize;
 }
 
 .welcome {
@@ -93,10 +108,46 @@ body {
     justify-content: center;
     padding: 40px 0 30px 0;
     font-size: 20px;
+
+    &__item {
+      &__button-html {
+        @include list-item-button();
+      }
+      &__button-css {
+        @include list-item-button();
+      }
+      &__button-js {
+        @include list-item-button();
+      }
+    }
+
+    &__add-new-project__button {
+      padding: 10px;
+      font-size: var(--normal-size);
+      border-radius: 10px;
+      background-color: skyblue;
+    }
   }
-  &__item {
-    
+
+  &__wrapper {
+    margin: 30px auto 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 450px);
+    grid-auto-rows: 450px;
+    justify-items: center;
+    grid-auto-columns: repeat(3, 1fr);
+    row-gap: 40px;
+
+    &__single-project {
+      max-width: 280px;
+      background-color: var(--black);
+      box-shadow: var(--box-shadow);
+      border-radius: 30px;
+      padding: 20px;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 15px;
+    }
   }
 }
-
-

@@ -146,8 +146,6 @@ p {
   padding-top: 70px;
 }
 
-
-
 .projects__filter-buttons-list {
   list-style-type: none;
   color: white;
@@ -159,9 +157,9 @@ p {
   font-size: 20px;
 }
 
-.projects__filter-button-link-html,
-.projects__filter-button-link-css,
-.projects__filter-button-link-js {
+.projects__filter-buttons-list__item__button-html,
+.projects__filter-buttons-list__item__button-css,
+.projects__filter-buttons-list__item__button-js {
   text-decoration: none;
   color: white;
   padding: 10px;
@@ -171,7 +169,7 @@ p {
   text-transform: capitalize;
 }
 
-.projects__add-new-project__button {
+.projects__filter-buttons-list__add-new-project__button {
   padding: 10px;
   font-size: var(--normal-size);
   border-radius: 10px;
@@ -183,7 +181,7 @@ p {
   /* cursor: pointer; */
 }
 
-.projects__single-project-wrapper {
+.projects__wrapper{
   margin: 30px auto 30px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -198,7 +196,7 @@ nav {
   display: none;
 }
 
-.projects__single-project {
+.projects__wrapper__single-project {
   max-width: 280px;
   background-color: var(--black);
   box-shadow: var(--box-shadow);
