@@ -1,8 +1,17 @@
-
-
 ::selection {
   color: black;
   background-color: white;
+}
+
+:root {
+  --black: #1f2024;
+  --white: #efefef;
+  --gray: #c2c1c1;
+  --normal-size: 19px;
+  --normal-color: #c2c1c1;
+  --header-size: 26px;
+  --header-color: var(--white);
+  --box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.426);
 }
 
 $primary: #1f2024;
