@@ -1,5 +1,3 @@
-/** @format */
-
 const headerEl = document.querySelector("header");
 
 const headerHeight = headerEl.offsetHeight;
@@ -9,34 +7,36 @@ document.documentElement.style.setProperty(
   headerHeight + "px"
 );
 
-const projectsContainer = document.querySelectorAll(
-  ".projects__single-project"
+const singleProjectDiv = document.querySelectorAll(".projects__single-project");
+const htmlSortButton = document.querySelector(
+  ".projects__filter-button-link-html"
 );
-const htmlSortButton = document.querySelector('[href="#html"]');
-const cssSortButton = document.querySelector('[href="#css"]');
-const jsSortButton = document.querySelector('[href="#javascript"]');
+const cssSortButton = document.querySelector(
+  ".projects__filter-button-link-css"
+);
+const jsSortButton = document.querySelector(".projects__filter-button-link-js");
 let count = 0;
 htmlSortButton.addEventListener("click", sortHTML);
 cssSortButton.addEventListener("click", sortCSS);
 jsSortButton.addEventListener("click", sortJS);
 
 function sortHTML() {
-  for (let i = 0; i < projectsContainer.length; i++) {
+  for (let i = 0; i < singleProjectDiv.length; i++) {
     for (
       let j = 0;
       j <
-      projectsContainer[i].querySelectorAll(
+      singleProjectDiv[i].querySelectorAll(
         ".projects__single-project__tags__list__item"
       ).length;
       j++
     ) {
       switch (
-        projectsContainer[i]
+        singleProjectDiv[i]
           .querySelectorAll(".projects__single-project__tags__list__item")
           [j].textContent.toLowerCase()
       ) {
         case "html":
-          projectsContainer[i].style.setProperty("order", count--);
+          singleProjectDiv[i].style.setProperty("order", count--);
           console.log("html ok");
 
           break;
@@ -46,22 +46,22 @@ function sortHTML() {
 }
 
 function sortCSS() {
-  for (let i = 0; i < projectsContainer.length; i++) {
+  for (let i = 0; i < singleProjectDiv.length; i++) {
     for (
       let j = 0;
       j <
-      projectsContainer[i].querySelectorAll(
+      singleProjectDiv[i].querySelectorAll(
         ".projects__single-project__tags__list__item"
       ).length;
       j++
     ) {
       switch (
-        projectsContainer[i]
+        singleProjectDiv[i]
           .querySelectorAll(".projects__single-project__tags__list__item")
           [j].textContent.toLowerCase()
       ) {
         case "css":
-          projectsContainer[i].style.setProperty("order", count--);
+          singleProjectDiv[i].style.setProperty("order", count--);
           console.log("css ok");
 
           break;
@@ -70,23 +70,23 @@ function sortCSS() {
   }
 }
 function sortJS() {
-  for (let i = 0; i < projectsContainer.length; i++) {
+  for (let i = 0; i < singleProjectDiv.length; i++) {
     for (
       let j = 0;
       j <
-      projectsContainer[i].querySelectorAll(
+      singleProjectDiv[i].querySelectorAll(
         ".projects__single-project__tags__list__item"
       ).length;
       j++
     ) {
       switch (
-        projectsContainer[i]
+        singleProjectDiv[i]
           .querySelectorAll(".projects__single-project__tags__list__item")
           [j].textContent.trim()
           .toLowerCase()
       ) {
         case "javascript":
-          projectsContainer[i].style.setProperty("order", count--);
+          singleProjectDiv[i].style.setProperty("order", count--);
           console.log("js ok");
           break;
       }
@@ -94,136 +94,81 @@ function sortJS() {
   }
 }
 
-// if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "html"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-//   console.log(
-//     "%cChanged: " + projectsContainer[i].style.order,
-//     "color: green"
-//   );
-//   console.log(
-//     projectsContainer[i].querySelectorAll(
-//       ".projects__single-project__tags__list__item"
-//     )[j].textContent
-//   );
-// } else if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "css"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-// } else if (
-//   projectsContainer[i]
-//     .querySelectorAll(".projects__single-project__tags__list__item")
-//     [j].textContent.toLowerCase() == "javascript"
-// ) {
-//   projectsContainer[i].style.setProperty("order", count--);
-// } else {
-//   console.log(
-//     projectsContainer[i].querySelectorAll(
-//       ".projects__single-project__tags__list__item"
-//     )[j].textContent
-//   );
-//   console.log(
-//     "%cNot changed: " + projectsContainer[i].style.order,
-//     "color: red"
-//   );
-// }
+const overlayBtn = document.querySelector("[data-id='open-overlay']");
+overlayBtn.addEventListener("click", () => {
+  buildOverlayWrapper.classList.remove("hidden");
+});
+const buildOverlayWrapper = document.querySelector(
+  "[data-id='build-overlay-container']"
+);
+const body = document.body;
+buildOverlayWrapper.style.height = body.offsetHeight + "px";
 
-// /* Disable default link behavior of tag links */
-// document.addEventListener("DOMContentLoaded", function () {
-//   const tagLinks = document.querySelectorAll(".projects__filter-button-link");
+const newProjectBtn = document.querySelector(
+  ".projects__add-new-project__button"
+);
 
-//   for (let i = 0; i < tagLinks.length; i++) {
-//     if (tagLinks[i]) {
-//       tagLinks[i].addEventListener("click", function (event) {
-//         event.preventDefault();
-//       });
-//     }
-//   }
-// });
+newProjectBtn.addEventListener("click", buildOverlay);
 
-/* Trying to sort with Javascript */
+function buildOverlay() {}
 
-// const singleProjects = document.querySelectorAll(".projects__single-project");
-// const tagDiv = document.querySelectorAll(".projects__single-project__tags");
-// const tagList = document.querySelectorAll(
-//   ".projects__single-project__tags__list"
-// );
-// let count = -1;
+const imageUploadContainer = document.querySelector(
+  "[data-id='image-upload-input-container']"
+);
+const imageUpload = document.querySelector("[data-id='image-upload-input']");
 
-// for (let i = 0; i < singleProjects.length; i++) {
-//   console.log("%c Round Number: " + i, "color: white; background: purple;");
-//   // console.log('%c SingleProject in Main Loop: ' + i, 'color: red;');
-//   const tags = tagList[i].querySelectorAll(
-//     ".projects__single-project__tags__list__item"
-//   );
-//   for (let j = 0; j < tags.length; j++) {
-//     console.log("Tags length: " + tags[j].textContent);
-//     if (tags[j].textContent === "html") {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count--;
-//       console.log("Count: " + count);
-//       // console.log('%c SingleProject in Nested Loop: ' + i, 'color: yellow');
-//       // console.log('%c Tags: ' + singleProjects[i].querySelectorAll(
-//       //   ".projects__single-project__tags__list__item"
-//       // ).length, 'color: green')
-//     }
-//   }
-// }
+imageUploadContainer.addEventListener("click", clickToChange);
 
-// let count = 0;
-// let lastCount = 50;
+function clickToChange() {
+  imageUpload.click();
+}
 
-// for (let i = 0; i < singleProjects.length; i++) {
-//   const tagsList = document.querySelector(
-//     ".projects__single-project__tags__list"
-//   );
-//   for (let j = 0; j < singleProjects[i].tagsList.tags.length; j++) {
-//     console.log("%c" + singleProjects[i].tagsList.tags.length, "color: green;");
-//     let containHtml =
-//       singleProjects[i].tagsList.tags[j].classList.contains("html");
-//     let containHtmlLength = containHtml.length;
-//     if (containHtml) {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count++;
-//       console.log([i] + " containHtml: " + containHtml);
-//       console.log([i] + " containHtmlLength: " + containHtmlLength);
-//     } else {
-//       singleProjects[i].style.setProperty("order", `${lastCount}`);
-//       lastCount++;
-//     }
-//   }
-//   console.log([i] + " singleProjects: " + singleProjects);
-//   console.log([i] + " singleProjects.length: " + singleProjects.length);
-//   console.log([i] + " tags: " + tags);
-//   console.log([i] + " tags.length: " + tags.length);
-// }
+function insertImage(input) {
+  const file = input.files[0];
 
-// for (let i = 0; i < singleProjects.length; i++) {
-//   for (let j = 0; j < tags.length; j++) {
-//     let containHtml = tags[j].classList.contains("html");
-//     let containHtmlLength = containHtml.length;
-//     if (containHtml) {
-//       singleProjects[i].style.setProperty("order", `${count}`);
-//       count++;
-//     /*
-//  console.log([i] + " containHtml: " + containHtml);
-//       console.log([i] + " containHtmlLength: " + containHtmlLength);
-//  */
-//     } else {
-//       singleProjects[i].style.setProperty("order", `${lastCount}`);
-//       lastCount++;
-//     }
-//   }
-// /*
-//  console.log([i] + " singleProjects: " + singleProjects);
-//   console.log([i] + " singleProjects.length: " + singleProjects.length);
+  if (file) {
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(file);
+    img.style.objectFit = "cover";
+    img.style.width = "100%";
+    img.style.height = "100%";
+    imageUploadContainer.style.width = imageUploadContainer.offsetWidth + "px";
+    imageUploadContainer.style.height =
+      imageUploadContainer.offsetHeight + "px";
+    while (imageUploadContainer.firstChild) {
+      imageUploadContainer.removeChild(imageUploadContainer.firstChild);
+    }
+    imageUploadContainer.appendChild(img);
+  }
+}
 
-//   console.log([i] + " tags: " + tags);
-//   console.log([i] + " tags.length: " + tags.length);
-// */
-// }
+const cardTags = document.querySelectorAll(".custom-tags-list-item");
+const tagInputs = document.querySelectorAll("[data-id='tag-input']");
+console.log(tagInputs.length);
+
+const descriptionInput = document.querySelector("[name='desc-input']");
+const cardDesc = document.querySelector("[data-id='card-description']");
+
+descriptionInput.addEventListener("click", () => {
+  const descValue = descriptionInput.value;
+  cardDesc.textContent = descValue;
+});
+
+for (let i = 0; i < tagInputs.length; i++) {
+  tagInputs[i].addEventListener("focus", function changeCardTags() {
+    const value1 = tagInputs[0].value;
+    const value2 = tagInputs[1].value;
+    const value3 = tagInputs[2].value;
+
+    cardTags[0].textContent = value1;
+    cardTags[1].textContent = value2;
+    cardTags[2].textContent = value3;
+  });
+}
+
+const customCard = document.querySelector("[data-id='custom-project-card']");
+const addProjectBtn = document.querySelector("[data-id='add-project-btn']");
+addProjectBtn.addEventListener("click", () => {
+  singleProjectDiv[1].parentNode.appendChild(customCard);
+  buildOverlayWrapper.classList.add("hidden");
+});

@@ -1,25 +1,120 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SirStegi - Small Personal Website</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/dist/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       referrerpolicy="no-referrer" />
     <link
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
+    <div class="build-overlay-container" data-id="build-overlay-container">
+      <div class="build-overlay">
+        <div
+          class="projects__wrapper__single-project"
+          data-tooltip="Click to view this project ✨"
+          id="html css javascript"
+          data-id="custom-project-card">
+          <div
+            class="projects__single-project__image-upload__input"
+            data-id="image-upload-input-container">
+            <i class="fa-regular fa-image projects__single-project__image-icon">
+            </i>
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              onchange="insertImage(this)"
+              class="image-upload-input"
+              data-id="image-upload-input" />
+            <p class="projects__single-project__image-upload__text">
+              Upload your image here
+            </p>
+          </div>
+          <div class="projects__wrapper__single-project__tags">
+            <ul class="projects__wrapper__single-project__tags__list">
+              <li
+                class="projects__wrapper__single-project__tags__list__item custom-tags-list-item">
+                tag1
+              </li>
+              <li
+                class="projects__wrapper__single-project__tags__list__item custom-tags-list-item">
+                tag2
+              </li>
+              <li
+                class="projects__wrapper__single-project__tags__list__item custom-tags-list-item">
+                tag3
+              </li>
+            </ul>
+          </div>
+          <p
+            class="projects__wrapper__single-project__description"
+            data-id="card-description">
+            A Provide a brief and informative description of your project here.
+          </p>
+        </div>
+        <div class="input-container">
+          <h1 class="input-container-heading">Design your project card</h1>
+          <div class="input-fields-container">
+            <div class="label-input-box">
+              <label for="tag-input-1">1. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-1"
+                name="tag-input-1"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="tag-input-2">2. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-2"
+                name="tag-input-2"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="tag-input-3">3. Tag Name</label>
+              <input
+                type="text"
+                class="project-input tag-input"
+                id="tag-input-3"
+                name="tag-input-3"
+                data-id="tag-input" />
+            </div>
+            <div class="label-input-box">
+              <label for="desc-input">Description</label>
+              <textarea
+                class="project-input description-input"
+                id="desc-input"
+                name="desc-input">
+              </textarea>
+            </div>
+            <button
+              class="projects__add-new-project__button"
+              data-id="add-project-btn">
+              Add this project
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
     <header>
-      <svg>
+      <!-- <svg>
         <use href="#working-bag-icon"></use>
-      </svg>
+      </svg> -->
       <nav>
         <ul>
           <li>
@@ -51,145 +146,187 @@
         <h1 class="welcome__heading">Hello, I am SirStegi</h1>
         <p class="welcome__subheading">I like to learn about Web Development</p>
         <div class="welcome__social-icon-wrapper">
-          <a href="#" title="Facebook" class="welcome__social-icon"
+          <a
+            href="#"
+            title="Facebook"
+            class="welcome__social-icon-wrapper__social-icon"
             ><i class="fab fa-facebook"></i
           ></a>
-          <a href="#" title="Instagram" class="welcome__social-icon"
+          <a
+            href="#"
+            title="Instagram"
+            class="welcome__social-icon-wrapper__social-icon"
             ><i class="fab fa-instagram"></i
           ></a>
-          <a href="#" title="Twitter" class="welcome__social-icon"
+          <a
+            href="#"
+            title="Twitter"
+            class="welcome__social-icon-wrapper__social-icon"
             ><i class="fab fa-twitter"></i
           ></a>
-          <a href="#" title="Github" class="welcome__social-icon"
+          <a
+            href="#"
+            title="Github"
+            class="welcome__social-icon-wrapper__social-icon"
             ><i class="fab fa-github"></i
           ></a>
-          <a href="#" title="LinkedIn" class="welcome__social-icon"
+          <a
+            href="#"
+            title="LinkedIn"
+            class="welcome__social-icon-wrapper__social-icon"
             ><i class="fab fa-linkedin-in"></i
           ></a>
         </div>
       </section>
       <section class="projects" id="projects">
         <h1 class="projects__heading">Projects</h1>
-        <ul class="projects__filter-buttons__list">
-          <li class="projects__filter-button">
-            <a href="#html" class="projects__filter-button-link">html</a>
+        <ul class="projects__filter-buttons-list">
+          <li class="projects____filter-buttons-list__item">
+            <button class="projects__filter-buttons-list__item__button-html">
+              html
+            </button>
           </li>
-          <li class="projects__filter-button">
-            <a href="#css" class="projects__filter-button-link">css</a>
+          <li class="projects____filter-buttons-list__item">
+            <button class="projects__filter-buttons-list__item__button-css">
+              css
+            </button>
           </li>
-          <li class="projects__filter-button">
-            <a href="#javascript" class="projects__filter-button-link"
-              >javascript</a
-            >
+          <li class="projects____filter-buttons-list__item">
+            <button class="projects__filter-buttons-list__item__button-js">
+              javascript
+            </button>
+          </li>
+          <li>
+            <button
+              class="projects__filter-buttons-list__add-new-project__button"
+              data-id="open-overlay">
+              Add new project
+            </button>
           </li>
         </ul>
-        <div class="projects__single-project-wrapper">
+        <div class="projects__wrapper">
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             data-tooltip="Click to view this project ✨"
             id="html css javascript">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 1" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">html</li>
-                <li class="projects__single-project__tags__list__item">css</li>
-                <li class="projects__single-project__tags__list__item">
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  html
+                </li>
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  css
+                </li>
+                <li class="projects__wrapper__single-project__tags__list__item">
                   javascript
                 </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               A This is a description of my project. It isnt really long.
             </p>
           </div>
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             id="css"
             data-tooltip="Click to view this project ✨">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 2" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">css</li>
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  css
+                </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               B This is a description of my project. It isnt really long.
             </p>
           </div>
 
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             data-tooltip="Click to view this project ✨"
             id="css">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 3" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">css</li>
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  css
+                </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               C This is a description of my project. It isnt really long.
             </p>
           </div>
 
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             data-tooltip="Click to view this project ✨"
             id="html css">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 4" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">html</li>
-                <li class="projects__single-project__tags__list__item">css</li>
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  html
+                </li>
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  css
+                </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               D This is a description of my project. It isnt really long.
             </p>
           </div>
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             data-tooltip="Click to view this project ✨"
             id="html">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 4" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">html</li>
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  html
+                </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               D This is a description of my project. It isnt really long.
             </p>
           </div>
           <div
-            class="projects__single-project"
+            class="projects__wrapper__single-project"
             data-tooltip="Click to view this project ✨"
             id="html">
             <img
-              class="projects__single-project__image"
+              class="projects__wrapper__single-project__image"
               src="assets/dice_roll.png"
               alt="Project 4" />
-            <div class="projects__single-project__tags">
-              <ul class="projects__single-project__tags__list">
-                <li class="projects__single-project__tags__list__item">html</li>
+            <div class="projects__wrapper__single-project__tags">
+              <ul class="projects__wrapper__single-project__tags__list">
+                <li class="projects__wrapper__single-project__tags__list__item">
+                  html
+                </li>
               </ul>
             </div>
-            <p class="projects__single-project__description">
+            <p class="projects__wrapper__single-project__description">
               D This is a description of my project. It isnt really long.
             </p>
           </div>
@@ -197,44 +334,44 @@
       </section>
       <section id="skills" class="skills">
         <h1 class="skills__heading">Languages and Frameworks</h1>
-        <div class="skills__single-skill-wrapper">
-          <div class="skills__single-skill">
+        <div class="skills__wrapper">
+          <div class="skills__wrapper__single-skill">
             <img
-              class="skills__single-skill__image"
+              class="skills__wrapper__single-skill__image"
               src="assets/react_icon.svg"
               alt="Skill 1" />
-            <h2 class="skills__single-skill__heading">React</h2>
-            <p class="skills__single-skill__description">
+            <h2 class="skills__wrapper__single-skill__heading">React</h2>
+            <p class="skills__wrapper__single-skill__description">
               I practice React to build dynamic websites and web apps.
             </p>
           </div>
-          <div class="skills__single-skill">
+          <div class="skills__wrapper__single-skill">
             <img
-              class="skills__single-skill__image"
+              class="skills__wrapper__single-skill__image"
               src="assets/react_icon.svg"
               alt="Skill 2" />
-            <h2 class="skills__single-skill__heading">React</h2>
-            <p class="skills__single-skill__description">
+            <h2 class="skills__wrapper__single-skill__heading">React</h2>
+            <p class="skills__wrapper__single-skill__description">
               I practice React to build dynamic websites and web apps.
             </p>
           </div>
-          <div class="skills__single-skill">
+          <div class="skills__wrapper__single-skill">
             <img
-              class="skills__single-skill__image"
+              class="skills__wrapper__single-skill__image"
               src="assets/react_icon.svg"
               alt="Skill 3" />
-            <h2 class="skills__single-skill__heading">React</h2>
-            <p class="skills__single-skill__description">
+            <h2 class="skills__wrapper__single-skill__heading">React</h2>
+            <p class="skills__wrapper__single-skill__description">
               I practice React to build dynamic websites and web apps.
             </p>
           </div>
-          <div class="skills__single-skill">
+          <div class="skills__wrapper__single-skill">
             <img
-              class="skills__single-skill__image"
+              class="skills__wrapper__single-skill__image"
               src="assets/react_icon.svg"
               alt="skill 4" />
-            <h2 class="skills__single-skill__heading">React</h2>
-            <p class="skills__single-skill__description">
+            <h2 class="skills__wrapper__single-skill__heading">React</h2>
+            <p class="skills__wrapper__single-skill__description">
               I practice React to build dynamic websites and web apps.
             </p>
           </div>
@@ -243,23 +380,43 @@
       <section class="contact" id="contact">
         <h1 class="contact__heading">Contact</h1>
         <div class="contact__social-icon-wrapper">
-          <a href="#" title="Facebook" class="contact__social-icon"
+          <a
+            href="#"
+            title="Facebook"
+            class="contact__social-icon-wrapper__social-icon"
             ><i class="fab fa-facebook"></i
           ></a>
-          <a href="#" title="Instagram" class="contact__social-icon"
+          <a
+            href="#"
+            title="Instagram"
+            class="contact__social-icon-wrapper__social-icon"
             ><i class="fab fa-instagram"></i
           ></a>
-          <a href="#" title="Twitter" class="contact__social-icon"
+          <a
+            href="#"
+            title="Twitter"
+            class="contact__social-icon-wrapper__social-icon"
             ><i class="fab fa-twitter"></i
           ></a>
-          <a href="#" title="Github" class="contact__social-icon"
+          <a
+            href="#"
+            title="Github"
+            class="contact__social-icon-wrapper__social-icon"
             ><i class="fab fa-github"></i
           ></a>
-          <a href="#" title="LinkedIn" class="contact__social-icon"
+          <a
+            href="#"
+            title="LinkedIn"
+            class="contact__social-icon-wrapper__social-icon"
             ><i class="fab fa-linkedin-in"></i
           ></a>
         </div>
-        <p class="contact__email">Email: sirstegi@gmail.com</p>
+        <p class="contact__email">
+          Email:
+          <a href="emailto:sirstegi@gmail.com" class="contact__email__link"
+            >sirstegi@gmail.com</a
+          >
+        </p>
       </section>
     </main>
     <footer>
