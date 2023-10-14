@@ -24,6 +24,7 @@
       <div class="build-overlay">
         <div
           class="projects__wrapper__single-project"
+          data-id="custom-single-project-div"
           data-tooltip="Click to view this project ✨"
           id="html css javascript"
           data-id="custom-project-card">
@@ -118,7 +119,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#welcome"
+            <a href="#welcome" data-id="welcome-link"
               >Welcome
               <div class="nav-list-item"></div
             ></a>
@@ -142,7 +143,8 @@
     <main>
       <section
         class="welcome animate__animated animate__fadeInDown"
-        id="welcome">
+        id="welcome"
+        data-id="welcome">
         <h1 class="welcome__heading">Hello, I am SirStegi</h1>
         <p class="welcome__subheading">I like to learn about Web Development</p>
         <div class="welcome__social-icon-wrapper">
@@ -182,17 +184,23 @@
         <h1 class="projects__heading">Projects</h1>
         <ul class="projects__filter-buttons-list">
           <li class="projects____filter-buttons-list__item">
-            <button class="projects__filter-buttons-list__item__button-html">
+            <button
+              class="projects__filter-buttons-list__item__button-html"
+              data-id="html-button">
               html
             </button>
           </li>
           <li class="projects____filter-buttons-list__item">
-            <button class="projects__filter-buttons-list__item__button-css">
+            <button
+              class="projects__filter-buttons-list__item__button-css"
+              data-id="css-button">
               css
             </button>
           </li>
           <li class="projects____filter-buttons-list__item">
-            <button class="projects__filter-buttons-list__item__button-js">
+            <button
+              class="projects__filter-buttons-list__item__button-js"
+              data-id="js-button">
               javascript
             </button>
           </li>
@@ -207,6 +215,7 @@
         <div class="projects__wrapper">
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             data-tooltip="Click to view this project ✨"
             id="html css javascript">
             <img
@@ -215,13 +224,19 @@
               alt="Project 1" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   html
                 </li>
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   css
                 </li>
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   javascript
                 </li>
               </ul>
@@ -232,6 +247,7 @@
           </div>
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             id="css"
             data-tooltip="Click to view this project ✨">
             <img
@@ -240,7 +256,9 @@
               alt="Project 2" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   css
                 </li>
               </ul>
@@ -252,6 +270,7 @@
 
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             data-tooltip="Click to view this project ✨"
             id="css">
             <img
@@ -260,7 +279,9 @@
               alt="Project 3" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   css
                 </li>
               </ul>
@@ -272,6 +293,7 @@
 
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             data-tooltip="Click to view this project ✨"
             id="html css">
             <img
@@ -280,10 +302,14 @@
               alt="Project 4" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   html
                 </li>
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   css
                 </li>
               </ul>
@@ -294,6 +320,7 @@
           </div>
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             data-tooltip="Click to view this project ✨"
             id="html">
             <img
@@ -302,7 +329,9 @@
               alt="Project 4" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   html
                 </li>
               </ul>
@@ -313,6 +342,7 @@
           </div>
           <div
             class="projects__wrapper__single-project"
+            data-id="single-project-div"
             data-tooltip="Click to view this project ✨"
             id="html">
             <img
@@ -321,7 +351,9 @@
               alt="Project 4" />
             <div class="projects__wrapper__single-project__tags">
               <ul class="projects__wrapper__single-project__tags__list">
-                <li class="projects__wrapper__single-project__tags__list__item">
+                <li
+                  class="projects__wrapper__single-project__tags__list__item"
+                  data-id="tags">
                   html
                 </li>
               </ul>

@@ -69,7 +69,8 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding: var(--scroll-margin, 300px);
+  // scroll-padding: var(--scroll-margin, 300px);
+  scroll-padding-top: 50px;
   /* scroll-padding-top: 100px; */
 }
 
@@ -335,7 +336,6 @@ svg {
     justify-items: center;
     grid-auto-columns: repeat(3, 1fr);
     row-gap: 40px;
-
     &__single-project {
       max-width: 280px;
       background-color: var(--black);
@@ -586,16 +586,33 @@ a {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (width >=768px) {
+  
+  h1 {
+    font-size: 40px;
+  }
+  
+  .welcome {
+    padding: 50px 0;
+    margin-top: 70px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(3, auto);
+    align-content: center;
+  
+}  
+
+  .welcome__heading {
+    font-size: 45px;
+    margin-bottom: 12px;
+  }
+  
   .welcome__subheading {
-    font-size: 26px;
+    font-size: 30px;
   }
 
-  @mixin social-icon-wrapper {
-    max-width: 100% !important;
-  }
-
-  @mixin social-icon {
-    font-size: 40px; 
+  .welcome__social-icon-wrapper__social-icon {
+   font-size: 25px;
   }
 
   .projects__wrapper {
@@ -607,10 +624,28 @@ a {
     grid-template-columns: repeat(2, max(280px));
     gap: 50px;
   }
+
+  .skills__heading {
+    margin-bottom: 50px;
+  }
+
+  .contact__social-icon-wrapper__social-icon {
+    font-size: 25px;
+   }
+
+   .contact__email {
+    font-size: 24px;
+   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (width >=980px) {
+
+  .welcome {
+    margin: unset;
+    padding: unset;
+  }
+
   .projects__wrapper {
     grid-template-columns: repeat(3, max(280px));
   }

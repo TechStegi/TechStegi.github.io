@@ -1,20 +1,43 @@
+/* START - NOT USED - GET THE HEIGHT OF THE HEADER ALIAS NAVBAR ELEMENT */
 const headerEl = document.querySelector("header");
-
 const headerHeight = headerEl.offsetHeight;
 
 document.documentElement.style.setProperty(
   "--scroll-margin",
   headerHeight + "px"
 );
+/* END - NOT USED - GET THE HEIGHT OF THE HEADER ELEMENT */
 
-const singleProjectDiv = document.querySelectorAll(".projects__single-project");
-const htmlSortButton = document.querySelector(
-  ".projects__filter-button-link-html"
+
+
+/* START - CENTER THE WELCOME SECTION */
+// the if statement acts like the media query for (width >= 980px)
+if (window.innerWidth >= 980) {
+  const welcomeSection = document.querySelector("[data-id='welcome']");
+  const welcomeHeight = window.innerHeight - headerHeight;
+
+  welcomeSection.style.setProperty("height", welcomeHeight - 50 + "px");
+}
+/* END - CENTER THE WELCOME SECTION */
+
+
+
+/* START - SCROLL TO TOP when clicking on the  "Welcome" link in the nav menu */
+const welcomeLink = document.querySelector("[data-id='welcome-link']");
+welcomeLink.addEventListener("click", () => {
+  window.scrollTo(0, 0);
+});
+/* END - SCROLL TO TOP */
+
+
+
+/* START - SORT PROJECTS BY CODING LANGUAGES VIA BUTTONS */
+const singleProjectDiv = document.querySelectorAll(
+  "[data-id='single-project-div']"
 );
-const cssSortButton = document.querySelector(
-  ".projects__filter-button-link-css"
-);
-const jsSortButton = document.querySelector(".projects__filter-button-link-js");
+const htmlSortButton = document.querySelector("[data-id='html-button']");
+const cssSortButton = document.querySelector("[data-id='css-button']");
+const jsSortButton = document.querySelector("[data-id='js-button']");
 let count = 0;
 htmlSortButton.addEventListener("click", sortHTML);
 cssSortButton.addEventListener("click", sortCSS);
@@ -22,48 +45,28 @@ jsSortButton.addEventListener("click", sortJS);
 
 function sortHTML() {
   for (let i = 0; i < singleProjectDiv.length; i++) {
-    for (
-      let j = 0;
-      j <
-      singleProjectDiv[i].querySelectorAll(
-        ".projects__single-project__tags__list__item"
-      ).length;
-      j++
-    ) {
-      switch (
-        singleProjectDiv[i]
-          .querySelectorAll(".projects__single-project__tags__list__item")
-          [j].textContent.toLowerCase()
-      ) {
-        case "html":
-          singleProjectDiv[i].style.setProperty("order", count--);
-          console.log("html ok");
+    const tags = singleProjectDiv[i].querySelectorAll("[data-id='tags']");
 
-          break;
+    for (let j = 0; j < tags.length; j++) {
+      const tag = tags[j].textContent.toLowerCase().trim();
+
+      if (tag == "html") {
+        singleProjectDiv[i].style.order = count;
+        count--;
       }
     }
   }
 }
-
 function sortCSS() {
   for (let i = 0; i < singleProjectDiv.length; i++) {
-    for (
-      let j = 0;
-      j <
-      singleProjectDiv[i].querySelectorAll(
-        ".projects__single-project__tags__list__item"
-      ).length;
-      j++
-    ) {
-      switch (
-        singleProjectDiv[i]
-          .querySelectorAll(".projects__single-project__tags__list__item")
-          [j].textContent.toLowerCase()
-      ) {
+    const tags = singleProjectDiv[i].querySelectorAll("[data-id='tags']");
+
+    for (let j = 0; j < tags.length; j++) {
+      const tag = tags[j].textContent.toLowerCase().trim();
+
+      switch (tag) {
         case "css":
           singleProjectDiv[i].style.setProperty("order", count--);
-          console.log("css ok");
-
           break;
       }
     }
@@ -71,29 +74,24 @@ function sortCSS() {
 }
 function sortJS() {
   for (let i = 0; i < singleProjectDiv.length; i++) {
-    for (
-      let j = 0;
-      j <
-      singleProjectDiv[i].querySelectorAll(
-        ".projects__single-project__tags__list__item"
-      ).length;
-      j++
-    ) {
-      switch (
-        singleProjectDiv[i]
-          .querySelectorAll(".projects__single-project__tags__list__item")
-          [j].textContent.trim()
-          .toLowerCase()
-      ) {
+    const tags = singleProjectDiv[i].querySelectorAll("[data-id='tags']");
+
+    for (let j = 0; j < tags.length; j++) {
+      const tag = tags[j].textContent.toLowerCase().trim();
+
+      switch (tag) {
         case "javascript":
           singleProjectDiv[i].style.setProperty("order", count--);
-          console.log("js ok");
           break;
       }
     }
   }
 }
+/* END - SORTING BUTTONS */
 
+
+
+/* BUILD OVERLAY START */ 
 const overlayBtn = document.querySelector("[data-id='open-overlay']");
 overlayBtn.addEventListener("click", () => {
   buildOverlayWrapper.classList.remove("hidden");
@@ -101,17 +99,18 @@ overlayBtn.addEventListener("click", () => {
 const buildOverlayWrapper = document.querySelector(
   "[data-id='build-overlay-container']"
 );
+
+// set the height of the build overlay wrapper to the height of the body / the whole document so far
 const body = document.body;
 buildOverlayWrapper.style.height = body.offsetHeight + "px";
-
 const newProjectBtn = document.querySelector(
   ".projects__add-new-project__button"
 );
+// newProjectBtn.addEventListener("click", buildOverlay);
+// function buildOverlay() {}
 
-newProjectBtn.addEventListener("click", buildOverlay);
 
-function buildOverlay() {}
-
+// letting users click to upload an image
 const imageUploadContainer = document.querySelector(
   "[data-id='image-upload-input-container']"
 );
@@ -122,7 +121,6 @@ imageUploadContainer.addEventListener("click", clickToChange);
 function clickToChange() {
   imageUpload.click();
 }
-
 function insertImage(input) {
   const file = input.files[0];
 
@@ -142,9 +140,10 @@ function insertImage(input) {
   }
 }
 
+
+// rest of the input fields, tags and description
 const cardTags = document.querySelectorAll(".custom-tags-list-item");
 const tagInputs = document.querySelectorAll("[data-id='tag-input']");
-console.log(tagInputs.length);
 
 const descriptionInput = document.querySelector("[name='desc-input']");
 const cardDesc = document.querySelector("[data-id='card-description']");
@@ -172,3 +171,4 @@ addProjectBtn.addEventListener("click", () => {
   singleProjectDiv[1].parentNode.appendChild(customCard);
   buildOverlayWrapper.classList.add("hidden");
 });
+/* BUILD OVERLAY END*/
