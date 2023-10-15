@@ -485,6 +485,43 @@ a {
   text-decoration: none;
 }
 
+.rechtliche-links {
+  color: white;
+  text-decoration: underline;
+}
+
+.rechtliche-h2  {
+  color: white;  
+}
+
+.datenschutz-body, .impressum-body {
+  margin-top: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0 30px;
+}
+
+.datenschutz-list {
+  color: var(--gray);
+  list-style-type: disc;
+
+}
+
+.datenschutz-body h1 , .impressum-body h1 {
+  margin-bottom: 30px;
+} 
+
+.datenschutz-body h2, .datenschutz-body h3, .datenschutz-body h4, .datenschutz-body h5, .datenschutz-body h6,
+.impressum-body h2, .impressum-body h3, .impressum-body h4, .impressum-body h5, .impressum-body h6    {
+  color: white;
+  // margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.datenschutz-body p, .impressum-body p, .datenschutz-body ul {
+  margin-bottom: 10px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (width <=600px) {
 }

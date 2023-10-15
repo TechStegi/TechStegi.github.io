@@ -36,9 +36,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
-    
+    <!-- START - BUILD OVERLAY CONTAINER (currently hidden)-->
     <div class="build-overlay-container" data-id="build-overlay-container">
       <div class="build-overlay">
+        <!-- FIRST HALF of build overlay - display a single project card to illustrate custom changes from the user  -->
         <div
           class="projects__wrapper__single-project"
           data-id="custom-single-project-div"
@@ -82,6 +83,7 @@
             A Provide a brief and informative description of your project here.
           </p>
         </div>
+        <!-- SECOND HALF of build overlay - input section  --> 
         <div class="input-container">
           <h1 class="input-container-heading">Design your project card</h1>
           <div class="input-fields-container">
@@ -129,10 +131,16 @@
         </div>
       </div>
     </div>
+    <!-- END - BUILD OVERLAY CONTAINER -->
+
+
+
     <header>
       <!-- <svg>
         <use href="#working-bag-icon"></use>
       </svg> -->
+      
+      <!-- START - NAVBAR -->
       <nav>
         <ul>
           <li>
@@ -157,7 +165,11 @@
       </nav>
       <div class="dark_mode_button"></div>
     </header>
+      <!-- END - NAVBAR -->
+
+
     <main>
+      <!-- START - WELCOME SECTION -->
       <section
         class="welcome animate__animated animate__fadeInDown"
         id="welcome"
@@ -197,8 +209,14 @@
           ></a>
         </div>
       </section>
+      <!-- END - WELCOME SECTION -->
+
+
+<!-- START - PROJECTS SECTION -->
       <section class="projects" id="projects">
         <h1 class="projects__heading">Projects</h1>
+
+         <!-- START - FILTER BUTTONS  -->
         <ul class="projects__filter-buttons-list">
           <li class="projects____filter-buttons-list__item">
             <button
@@ -229,7 +247,11 @@
             </button>
           </li>
         </ul>
+         <!-- END - FILTER BUTTONS  -->
+
         <div class="projects__wrapper">
+
+          <!-- START - SINGLE PROJECT  -->
           <div
             class="projects__wrapper__single-project"
             data-id="single-project-div"
@@ -262,6 +284,8 @@
               A This is a description of my project. It isnt really long.
             </p>
           </div>
+          <!-- END - SINGLE PROJECT  -->
+
           <div
             class="projects__wrapper__single-project"
             data-id="single-project-div"
@@ -335,6 +359,7 @@
               D This is a description of my project. It isnt really long.
             </p>
           </div>
+
           <div
             class="projects__wrapper__single-project"
             data-id="single-project-div"
@@ -357,6 +382,7 @@
               D This is a description of my project. It isnt really long.
             </p>
           </div>
+
           <div
             class="projects__wrapper__single-project"
             data-id="single-project-div"
@@ -379,11 +405,16 @@
               D This is a description of my project. It isnt really long.
             </p>
           </div>
+
         </div>
       </section>
+
+
+<!-- START - SKILLS SECTION -->
       <section id="skills" class="skills">
         <h1 class="skills__heading">Languages and Frameworks</h1>
         <div class="skills__wrapper">
+          <!-- START - SINGLE SKILL -->
           <div class="skills__wrapper__single-skill">
             <img
               class="skills__wrapper__single-skill__image"
@@ -394,6 +425,8 @@
               I practice React to build dynamic websites and web apps.
             </p>
           </div>
+          <!-- END - SINGLE SKILL -->
+
           <div class="skills__wrapper__single-skill">
             <img
               class="skills__wrapper__single-skill__image"
@@ -426,6 +459,10 @@
           </div>
         </div>
       </section>
+<!-- END - SKILLS SECTION -->
+
+
+<!-- START - CONTACT SECTION -->
       <section class="contact" id="contact">
         <h1 class="contact__heading">Contact</h1>
         <div class="contact__social-icon-wrapper">
@@ -467,7 +504,11 @@
           >
         </p>
       </section>
+<!-- END - CONTACT SECTION -->
     </main>
+
+
+<!-- START - FOOTER -->
     <footer>
       <p><a href="">Impressum</a></p>
       <p>-</p>
@@ -480,6 +521,10 @@
         icon by <a target="_blank" href="https://icons8.com">Icons8</a>
       </p>
     </footer>
+<!-- END - FOOTER -->
+
+
+<!-- START - SVGS (not used atm)  -->
     <svg
       id="working-bag-icon"
       class="working-bag-icon"
@@ -503,6 +548,9 @@
         stroke-linecap="round"
         stroke-linejoin="round" />
     </svg>
+<!-- END - SVGS (not used atm)  -->
+
+
     <script src="index.js"></script>
   </body>
 </html>
